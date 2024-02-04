@@ -1,3 +1,3 @@
 # LevelQuests
 
-This is where she makes a mod.
+Adds quests to the level page.
