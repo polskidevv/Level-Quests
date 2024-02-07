@@ -23,13 +23,12 @@ class $modify(InfoLayerMy, LevelInfoLayer) {
 			buttonSpr, this, menu_selector(InfoLayerMy::onButton)
 		);
 
-		button->setZOrder(2);
-		button->setPosition(760, 11);
-		auto menu = CCMenu::create();
-		menu->addChild(button);
-		menu->setPosition(-165, 235.5);
-		menu->setScale(0.675);
-		this->addChild(menu);
+		if(auto menu = this->getChildByID("left-side-menu")) {
+			if (Mod::get()->getSettingValue<bool>("active"))
+				menu->addChild(button);
+				menu->updateLayout();
+		}
+
 		return true;
 	} 
 };
