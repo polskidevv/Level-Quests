@@ -6,6 +6,7 @@
 	"name": "Level Quests",
 	"developer": "polsk",
 	"description": "Adds the Quests button onto the Level page.",
+	"repository": "https://github.com/polskidevv/Level-Quests",
 	"resources": {
         "sprites": [
             "resources/challengeButton.png"
