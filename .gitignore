@@ -39,6 +39,8 @@
 *.tmPreferences.cache
 *.stTheme.cache
 
+# GitHub
+**/.github
 # Ignore build folders
 **/build
 # Ignore platform specific build folders
