@@ -1,15 +1,25 @@
 {
+<<<<<<< HEAD
 	"geode": "2.0.0-beta.21",
     "gd": {
         "win": "2.204",
         "android": "2.205",
         "mac": "2.200"
     },
+=======
+	"geode": "2.0.0-beta.16",
+	"gd": {
+	    "win": "2.204",
+	    "android": "2.205",
+	    "mac": "2.200"
+	},
+>>>>>>> 40ec72f5a5c2c24c23faab3898510c15c340d238
 	"version": "v1.1.0",
 	"id": "polsk.level_quests",
 	"name": "Level Quests",
 	"developer": "polsk",
 	"description": "Adds the Quests button onto the Level page.",
+	"repository": "https://github.com/polskidevv/Level-Quests",
 	"resources": {
         "sprites": [
             "resources/*.png"
