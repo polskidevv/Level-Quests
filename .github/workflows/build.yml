@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "**"
+      - '**'
 
 jobs:
   build:
@@ -15,8 +15,8 @@ jobs:
         - name: Windows
           os: windows-latest
           
-        #- name: macOS
-          #os: macos-latest
+        - name: macOS
+          os: macos-latest
 
         - name: Android32
           os: ubuntu-latest
@@ -36,7 +36,6 @@ jobs:
         uses: geode-sdk/build-geode-mod@main
         with:
           combine: true
-          sdk: v3.2.0
           target: ${{ matrix.config.target }}
       
   package:
