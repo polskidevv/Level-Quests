@@ -4,12 +4,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES "x86_64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-project(LevelQuests VERSION 1.1.0)
+project(LevelQuestsPort VERSION 1.0.0)
 
-# Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
-    # Add your cpp files here
+    # Add any extra C++ source files here
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
@@ -20,5 +19,4 @@ endif()
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
-# Set up dependencies, resources, link Geode
-setup_geode_mod(${PROJECT_NAME} EXTERNALS geode.node-ids:1.3.0)
+setup_geode_mod(${PROJECT_NAME})
