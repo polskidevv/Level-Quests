@@ -1,60 +1,42 @@
 {
-<<<<<<< HEAD
-	"geode": "2.0.0-beta.21",
-    "gd": {
-        "win": "2.204",
-        "android": "2.205",
-        "mac": "2.200"
-    },
-=======
-	"geode": "2.0.0-beta.16",
+	"geode": "3.2.0",
 	"gd": {
-	    "win": "2.204",
-	    "android": "2.205",
-	    "mac": "2.200"
+		"android": "2.206",
+		"win": "2.206"
 	},
->>>>>>> 40ec72f5a5c2c24c23faab3898510c15c340d238
-	"version": "v1.1.0",
+	"version": "v2.0.0",
 	"id": "polsk.level_quests",
 	"name": "Level Quests",
 	"developer": "polsk",
-	"description": "Adds the Quests button onto the Level page.",
-	"repository": "https://github.com/polskidevv/Level-Quests",
+	"description": "Adds quests to LevelInfoLayer",
+	"tags": [
+		"enhancement",
+		"interface"
+	],
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": "*",
+			"importance": "required"
+		}
+	],
 	"resources": {
-        "sprites": [
-            "resources/*.png"
-        ]
-    },
+		"sprites": [
+			"res/*.png"
+		]
+	},
 	"settings": {
         "active": {
             "name": "Enable Mod",
-            "description": "Decides whether the mod is active or not.",
+            "description": "Soft toggles the Mod.",
             "type": "bool",
             "default": true
         },
 		"location": {
 			"name": "Change Location",
-			"description": "Changes the location back to the garage menu.\nOff by default.",
+			"description": "TEMPORARILY DISABLED!\nThis option is disabled until proper node ids release for the Garage menu in LevelInfoLayer.\nOriginal description:\nChanges the location to the garage menu.\nOff by default.",
 			"type": "bool",
 			"default": false
-		},
-		"exScale": {
-			"name": "Exclamation Scale",
-			"description": "Sets the scale of the Completed Quest indicator.",
-			"type": "float",
-			"default": 0.450,
-			"min": 0.350,
-            "max": 0.525,
-            "control": {
-                "slider": true
-            }
 		}
-    },
-	"dependencies": [
-		{
-		  "id": "geode.node-ids",
-		  "importance": "required",
-		  "version": ">=1.3.0"
-		}
-	  ]
+	}
 }
