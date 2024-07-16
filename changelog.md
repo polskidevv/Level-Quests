@@ -1,3 +1,12 @@
+# v2.0.0
+
+* Ported to 2.206
+* Changed the logo again
+
+# v1.1.1
+
+* Added an option to revert the location change. `TEMPORARILY DISABLED AS OF 2.206`
+
 # v1.1.0
 
 * Changed location of the button to the left side menu.

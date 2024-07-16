@@ -1,6 +1,10 @@
 {
-	"geode": "2.0.0-beta.16",
-	"gd": "2.204",
+	"geode": "2.0.0-beta.21",
+    "gd": {
+        "win": "2.204",
+        "android": "2.205",
+        "mac": "2.200"
+    },
 	"version": "v1.1.0",
 	"id": "polsk.level_quests",
 	"name": "Level Quests",
@@ -8,7 +12,7 @@
 	"description": "Adds the Quests button onto the Level page.",
 	"resources": {
         "sprites": [
-            "resources/challengeButton.png"
+            "resources/*.png"
         ]
     },
 	"settings": {
@@ -17,7 +21,24 @@
             "description": "Decides whether the mod is active or not.",
             "type": "bool",
             "default": true
-        }
+        },
+		"location": {
+			"name": "Change Location",
+			"description": "Changes the location back to the garage menu.\nOff by default.",
+			"type": "bool",
+			"default": false
+		},
+		"exScale": {
+			"name": "Exclamation Scale",
+			"description": "Sets the scale of the Completed Quest indicator.",
+			"type": "float",
+			"default": 0.450,
+			"min": 0.350,
+            "max": 0.525,
+            "control": {
+                "slider": true
+            }
+		}
     },
 	"dependencies": [
 		{
