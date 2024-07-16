@@ -14,7 +14,6 @@ class $modify(InfoLayerMy, LevelInfoLayer) {
 		scene->addChild(questsMenu);
 	}
 
-
 	bool init(GJGameLevel* p0, bool p1) {
 		if (!LevelInfoLayer::init(p0, p1))
 			return false;
@@ -24,7 +23,7 @@ class $modify(InfoLayerMy, LevelInfoLayer) {
 			auto buttonSprAlt = CCSprite::create("challengeButton_02.png"_spr);
 			auto sprite = buttonSpr;
 
-			if (Mod::get()->getSettingValue<bool>("location")) {
+			/*if (Mod::get()->getSettingValue<bool>("location")) {					temporarily disabled until proper nodeids for the garage menu releases
 				if(auto menu = this->getChildByID("garage-menu")) {
 					menu->setLayout(
 						RowLayout::create()
@@ -36,9 +35,9 @@ class $modify(InfoLayerMy, LevelInfoLayer) {
 					);
 					sprite->setPositionY(35.250f);
 					button->setSizeMult(1);
-					button->m_animationType = MenuAnimationType{1};
-					button->m_startPosition = sprite->getPosition();
-					button->m_destPosition = CCPoint{0, -8.f};
+					button->m_animationType = MenuAnimationType::Move;
+					button->m_startPosition = button->getPosition();
+					button->m_offset = ccp(0, -8.f);
 					button->setID("quests-button");
 					menu->setContentSize({ 200.f, 0.f });
 					menu->addChild(button);
@@ -46,19 +45,17 @@ class $modify(InfoLayerMy, LevelInfoLayer) {
 					menu->updateLayout();
 				}
 			}
-			else {
+			else {*/
 				if(auto menu = this->getChildByID("left-side-menu")) {
 					sprite = buttonSprAlt;
 					auto button = CCMenuItemSpriteExtra::create(
 						sprite, this, menu_selector(InfoLayerMy::onButton)
 					);
-					button->setID("quests-button-left");
+					button->setID("quests-button");
 					menu->addChild(button);
 					menu->updateLayout();
-					auto scene = reinterpret_cast<CCNode*>(CCScene::get());
-					auto questsPage = scene->getChildByID("quests");
 				}
-			}
+			//}
 		}
 		return true;
 	} 
