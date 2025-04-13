@@ -1,5 +1,10 @@
 # v2.0.0
 
+* Ported to 2.2074
+* Enabled the location change again
+
+# v2.0.0
+
 * Ported to 2.206
 * Changed the logo again
 
