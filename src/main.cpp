@@ -3,17 +3,7 @@
 
 using namespace geode::prelude;
 
-class $modify(InfoLayerMy, LevelInfoLayer) {
-	void onButton(CCObject* target) {
-		auto scene = reinterpret_cast<CCNode*>(CCScene::get());
-		auto questsMenu = ChallengesPage::create();
-		questsMenu->setZOrder(1);
-		questsMenu->draw();
-		questsMenu->setVisible(true);
-		questsMenu->setID("quests");
-		scene->addChild(questsMenu);
-	}
-
+class $modify(LQInfoLayer, LevelInfoLayer) {
 	bool init(GJGameLevel* p0, bool p1) {
 		if (!LevelInfoLayer::init(p0, p1))
 			return false;
@@ -23,39 +13,38 @@ class $modify(InfoLayerMy, LevelInfoLayer) {
 			auto buttonSprAlt = CCSprite::create("challengeButton_02.png"_spr);
 			auto sprite = buttonSpr;
 
-			/*if (Mod::get()->getSettingValue<bool>("location")) {					temporarily disabled until proper nodeids for the garage menu releases
+			if (Mod::get()->getSettingValue<bool>("location")) {
 				if(auto menu = this->getChildByID("garage-menu")) {
-					menu->setLayout(
-						RowLayout::create()
-							->setGrowCrossAxis(true)
-							->setAxisReverse(true)
-					);
+					menu->setLayout(RowLayout::create());
 					auto button = CCMenuItemSpriteExtra::create(
-						sprite, this, menu_selector(InfoLayerMy::onButton)
+						sprite, this, menu_selector(CreatorLayer::onChallenge)
 					);
+
 					sprite->setPositionY(35.250f);
 					button->setSizeMult(1);
 					button->m_animationType = MenuAnimationType::Move;
-					button->m_startPosition = button->getPosition();
-					button->m_offset = ccp(0, -8.f);
+					button->m_startPosition = sprite->getPosition();
+					button->m_offset = ccp(button->getPositionX(), -8.f);
 					button->setID("quests-button");
+					button->m_duration = 0.2f;
+					button->m_unselectedDuration = 0.2f;
 					menu->setContentSize({ 200.f, 0.f });
 					menu->addChild(button);
-					menu->setPositionX(464.0f);
+					if(menu->getChildrenCount() > 1) { menu->setPositionX(menu->getPositionX() - 10.f); } else { menu->setPositionX(menu->getPositionX() - 25.f); }
 					menu->updateLayout();
 				}
 			}
-			else {*/
+			else {
 				if(auto menu = this->getChildByID("left-side-menu")) {
 					sprite = buttonSprAlt;
 					auto button = CCMenuItemSpriteExtra::create(
-						sprite, this, menu_selector(InfoLayerMy::onButton)
+						sprite, this, menu_selector(CreatorLayer::onChallenge)
 					);
 					button->setID("quests-button");
 					menu->addChild(button);
 					menu->updateLayout();
 				}
-			//}
+			}
 		}
 		return true;
 	} 

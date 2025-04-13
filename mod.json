@@ -1,10 +1,10 @@
 {
-	"geode": "3.2.0",
+	"geode": "4.3.1",
 	"gd": {
-		"android": "2.206",
-		"win": "2.206"
+		"android": "2.2074",
+		"win": "2.2074"
 	},
-	"version": "v2.0.0",
+	"version": "v2.1.0",
 	"id": "polsk.level_quests",
 	"name": "Level Quests",
 	"developer": "polsk",
@@ -13,13 +13,9 @@
 		"enhancement",
 		"interface"
 	],
-	"dependencies": [
-		{
-			"id": "geode.node-ids",
-			"version": ">=1.12.0",
-			"importance": "required"
-		}
-	],
+	"dependencies": {
+  		"geode.node-ids": ">=1.20.1"
+	},
 	"resources": {
 		"sprites": [
 			"res/*.png"
@@ -34,7 +30,7 @@
         },
 		"location": {
 			"name": "Change Location",
-			"description": "TEMPORARILY DISABLED!\nThis option is disabled until proper node ids release for the Garage menu in LevelInfoLayer.\nOriginal description:\nChanges the location to the garage menu.\nOff by default.",
+			"description": "Changes the location to the garage menu.\nOff by default.",
 			"type": "bool",
 			"default": false
 		}
